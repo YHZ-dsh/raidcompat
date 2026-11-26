@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.example.raidcompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RaidMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

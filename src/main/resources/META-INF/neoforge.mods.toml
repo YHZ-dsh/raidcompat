@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+issueTrackerURL = "https://example.invalid/raidcompat/issues"
+
+[[mods]]
+modId = "raidcompat"
+version = "1.0.0"
+displayName = "RaidCompat 1.21.2"
+description = '''
+Backports the Minecraft 1.21.2 raid spawn-position search to 1.21.1.
+
+The 1.21.2 search samples spawn positions from far to near inside a
++/-96 block vertical window around the raid center and refuses positions
+that are not on top of a valid, opaque spawn surface. 1.21.1 instead uses
+three fixed rings (r=64, r=32, r=0) and gives up instantly, which is why
+1.21.2-era raid farm designs produce a boss bar but no raiders.
+'''
+
+[[mixins]]
+config = "raidcompat.mixins.json"
+
+[[dependencies.raidcompat]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.raidcompat]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "BOTH"

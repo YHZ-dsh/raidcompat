@@ -1,0 +1,34 @@
+pluginManagement {
+    repositories {
+        // Locally seeded artifacts (plugins.gradle.org keeps dropping TLS handshakes here).
+        maven {
+            name = 'LocalSeed'
+            url = uri('file:///D:/Deepseek/local-m2')
+        }
+        // Mirrors first: raw hosts intermittently drop Java TLS handshakes on this network.
+        maven {
+            name = 'AliyunGradlePlugin'
+            url = uri('https://mirrors.aliyun.com/repository/gradle-plugin')
+        }
+        maven {
+            name = 'AliyunPublic'
+            url = uri('https://mirrors.aliyun.com/repository/public')
+        }
+        maven {
+            name = 'HuaweiCloud'
+            url = uri('https://mirrors.huaweicloud.com/repository/maven/')
+        }
+        maven {
+            name = 'BMCLAPI'
+            url = uri('https://bmclapi2.bangbang93.com/maven')
+        }
+        gradlePluginPortal()
+        mavenCentral()
+        maven {
+            name = 'NeoForged'
+            url = uri('https://maven.neoforged.net/releases')
+        }
+    }
+}
+
+rootProject.name = 'raidcompat'
